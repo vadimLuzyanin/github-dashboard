@@ -59,10 +59,10 @@ const PaginationButton = styled.span`
 `;
 
 const MainView = () => {
-  const [query, setQuery] = useState("");
+  const [query, setQuery] = useState(localStorage.getItem('query') || '');
   const [repos, setRepos] = useState([]);
   const [pages, setPages] = useState([1]);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(localStorage.getItem('page') || 1);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(false);
 
@@ -109,6 +109,9 @@ const MainView = () => {
         }
         setPages(pagesCount);
         setLoading(false);
+
+        localStorage.setItem('query', debouncedQueryValue)
+        localStorage.setItem('page', currentPage)
       });
   }, [debouncedQueryValue, currentPage]);
   return (
