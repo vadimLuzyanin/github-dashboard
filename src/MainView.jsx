@@ -90,7 +90,7 @@ const MainView = () => {
           const lastCommitDateString = `${lastCommitDate.getDate()}.${lastCommitDate.getMonth()}.${lastCommitDate.getFullYear()} ${lastCommitDate.getHours()}:${lastCommitDate.getMinutes()}`;
           return (
             <Repo key={repo.id}>
-              <Link to={`/repos/${repo.id}`}>
+              <Link to={`${process.env.PUBLIC_URL}/repos/${repo.id}`}>
                 <RepoTitle>{repo.name}</RepoTitle>
               </Link>
               <br></br>

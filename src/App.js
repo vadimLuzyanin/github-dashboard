@@ -28,17 +28,17 @@ const App = () => {
   return (
     <Wrapper>
       <BrowserRouter>
-        <Link to="/">
+        <Link to={`${process.env.PUBLIC_URL}/`}>
           <LinkHome>Home page</LinkHome>
         </Link>
         <Switch>
-        <Route path="/" exact>
+        <Route path={`${process.env.PUBLIC_URL}/`} exact>
           <MainView />
         </Route>
-        <Route path="/repos/:currentRepoId">
+        <Route path={`${process.env.PUBLIC_URL}/repos/:currentRepoId`}>
           <RepoView />
         </Route>
-        <Redirect from='*' to='/'/>
+        <Redirect from='*' to={`${process.env.PUBLIC_URL}`}/>
         </Switch>
       </BrowserRouter>
     </Wrapper>

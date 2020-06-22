@@ -89,7 +89,6 @@ const RepoView = () => {
   }
 
   return (
-    <div>
       <RepositoryPage>
         {currentError ? (
           <div>Error</div>
@@ -138,7 +137,6 @@ const RepoView = () => {
           )
         )}
       </RepositoryPage>
-    </div>
   );
 };
 
